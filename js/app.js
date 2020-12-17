@@ -9,13 +9,12 @@ form.addEventListener('submit', function(e){
     const feedback = document.querySelector('.feedback');
     const message = document.querySelector('#message');
 
-    messageContent.textContent = message.value;
-    
     if(document.querySelector('#message').value == '') {
         feedback.classList.add('show');
         setTimeout( () => {
         feedback.classList.remove('show')
         }, 2000);
     } else {
+        messageContent.textContent = message.value;
     }
 })
