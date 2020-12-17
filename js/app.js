@@ -1,11 +1,23 @@
 // Tu código aquí
 
 const form = document.querySelector('#message-form')
+const button = document.querySelector('#submitBtn');
+const messageContent = document.querySelector('.message-content');
+const information = document.querySelector('information');
 
 form.addEventListener('submit', function(e){
     console.log("Información sobre el objeto event: ", e)
-    e.preventDefault() // Curioso sobre lo que hace esto? Mira como se comporta el formulario cuando haces clic en "Enviar" si esta línea está comentada. 
+    e.preventDefault()
+    messageContent.textContent = document.querySelector('#message').value;
 
-    console.log("Hemos hecho clic en el botón de submit!")
+    if(document.querySelector('#message').value == '') {
+       
+            let errorMessage = document.createElement('H5');
+            let errorMessageText = document.createTextNode("please enter a value to pass");
+            errorMessage.appendChild(errorMessageText);
+            document.querySelector('.information').appendChild(errorMessage);
 
+    } else {
+
+    }
 })
