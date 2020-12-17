@@ -1,4 +1,4 @@
-(function () {
+
 /* ==== Select the input element ==== */
 const form = document.querySelector('#message-form')
 /* ==== Set up Submit Button ==== */
@@ -13,12 +13,9 @@ form.addEventListener('submit', function(e){
     
     if(document.querySelector('#message').value == '') {
         feedback.classList.add('show');
-        setTimeout(function(){
-        feedback.classList.remove('show');
-        }, 2000)
+        setTimeout( () => {
+        feedback.classList.remove('show')
+        }, 2000);
     } else {
-        messageContent.textContent = message.value;
-        message.value = '';
     }
 })
-})()
